@@ -1,9 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PublishAot>true</PublishAot>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(PublishAot)' != 'true'">
+    <DnneAddGeneratedBinaryToProject>true</DnneAddGeneratedBinaryToProject>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(PublishAot)' != 'true'">
+    <PackageReference Include="DNNE" Version="1.0.32" />
+  </ItemGroup>
 </Project>

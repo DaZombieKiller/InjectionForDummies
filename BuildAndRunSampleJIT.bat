@@ -1,5 +1,5 @@
 @echo off
-set PAYLOAD_PATH=Payload\bin\Release\net7.0\win-x64\publish\Payload.dll
+set PAYLOAD_PATH=Payload\bin\Release\net7.0\win-x64\publish\PayloadNE.dll
 set PAYLOAD_FUNC=ExecutePayload
 
 rem Build the payload library for x64.
