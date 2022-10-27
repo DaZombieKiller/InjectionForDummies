@@ -9,6 +9,10 @@ public static unsafe partial class Payload
     //   * It must use the stdcall calling convention
     //   * It must return a uint and take a pointer as input
     //
+    // On Windows, stdcall is the default calling convention used for methods
+    // marked with [UnmanagedCallersOnly], so we do not need to explicitly
+    // specify it for this sample.
+    //
     // We also need to export it by assigning the EntryPoint property of the
     // [UnmanagedCallersOnly] attribute. This will export the function when
     // the library is published with NativeAOT.
