@@ -15,7 +15,7 @@ public static unsafe partial class Payload
     //
     // We also need to export it by assigning the EntryPoint property of the
     // [UnmanagedCallersOnly] attribute. This will export the function when
-    // the library is published with NativeAOT.
+    // the library is built with NativeAOT or DNNE.
     //
     [UnmanagedCallersOnly(EntryPoint = "ExecutePayload")]
     public static uint Execute(void* _)
